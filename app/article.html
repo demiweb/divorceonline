@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Divorce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style type="text/css">
+        .a2a_hide {
+            display: none
+        }
+
+        .a2a_logo_color {
+            background-color: transparent
+        }
+
+        .a2a_menu, .a2a_menu * {
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            float: none;
+            margin: 0;
+            padding: 0;
+            position: static;
+            height: auto;
+            width: auto
+        }
+
+        .a2a_menu {
+            border-radius: 6px;
+            display: none;
+            direction: ltr;
+            background: #FFF;
+            font: 16px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, "Liberation Sans", sans-serif;
+            color: #000;
+            line-height: 12px;
+            border: 1px solid #CCC;
+            vertical-align: baseline;
+            overflow: hidden
+        }
+
+        .a2a_mini {
+            min-width: 200px;
+            position: absolute;
+            width: 300px;
+            z-index: 9999997
+        }
+
+        .a2a_overlay {
+            display: none;
+            background: #616c7deb;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 9999998;
+            -webkit-tap-highlight-color: transparent;
+            transition: opacity .14s, backdrop-filter .14s
+        }
+
+        .a2a_full {
+            background: #FFF;
+            border: 1px solid #FFF;
+            box-shadow: #2a2a2a1a 0 0 20px 10px;
+            height: auto;
+            height: calc(320px);
+            top: 15%;
+            left: 50%;
+            margin-left: -320px;
+            position: fixed;
+            text-align: center;
+            width: 640px;
+            z-index: 9999999;
+            transition: transform .14s, opacity .14s
+        }
+
+        .a2a_full_footer, .a2a_full_header, .a2a_full_services {
+            border: 0;
+            margin: 0;
+            padding: 12px;
+            box-sizing: border-box
+        }
+
+        .a2a_full_header {
+            padding-bottom: 8px
+        }
+
+        .a2a_full_services {
+            height: 280px;
+            overflow-y: scroll;
+            padding: 0 12px;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .a2a_full_services .a2a_i {
+            display: inline-block;
+            float: none;
+            width: 181px;
+            width: calc(33.334% - 18px)
+        }
+
+        div.a2a_full_footer {
+            font-size: 12px;
+            text-align: center;
+            padding: 8px 14px
+        }
+
+        div.a2a_full_footer a, div.a2a_full_footer a:visited {
+            display: inline;
+            font-size: 12px;
+            line-height: 14px;
+            padding: 8px 14px
+        }
+
+        div.a2a_full_footer a:focus, div.a2a_full_footer a:hover {
+            background: 0 0;
+            border: 0;
+            color: #0166FF
+        }
+
+        div.a2a_full_footer a span.a2a_s_a2a, div.a2a_full_footer a span.a2a_w_a2a {
+            background-size: 14px;
+            border-radius: 3px;
+            display: inline-block;
+            height: 14px;
+            line-height: 14px;
+            margin: 0 3px 0 0;
+            vertical-align: top;
+            width: 14px
+        }
+
+        .a2a_modal {
+            height: 0;
+            left: 50%;
+            margin-left: -320px;
+            position: fixed;
+            text-align: center;
+            top: 15%;
+            width: 640px;
+            z-index: 9999999;
+            transition: transform .14s, opacity .14s;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        .a2a_modal_body {
+            background: 0 0;
+            border: 0;
+            font: 24px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, "Liberation Sans", sans-serif;
+            position: relative;
+            height: auto;
+            width: auto
+        }
+
+        .a2a_thanks {
+            color: #fff;
+            height: auto;
+            margin-top: 20px;
+            width: auto
+        }
+
+        .a2a_thanks > div:first-child {
+            margin: 0 0 40px 0
+        }
+
+        .a2a_thanks div * {
+            height: inherit
+        }
+
+        #a2a_copy_link {
+            background: #FFF;
+            border: 1px solid #FFF;
+            cursor: pointer;
+            margin-top: 15%
+        }
+
+        label.a2a_s_link#a2a_copy_link_icon, label.a2a_w_link#a2a_copy_link_icon {
+            background-size: 48px;
+            border-radius: 0;
+            display: inline-block;
+            height: 48px;
+            left: 0;
+            line-height: 48px;
+            margin: 0 3px 0 0;
+            position: absolute;
+            vertical-align: top;
+            width: 48px
+        }
+
+        #a2a_modal input#a2a_copy_link_text {
+            background-color: transparent;
+            border: 0;
+            color: #2A2A2A;
+            cursor: pointer;
+            font: inherit;
+            height: 48px;
+            left: 62px;
+            max-width: initial;
+            min-height: auto;
+            padding: 0;
+            position: relative;
+            width: 564px;
+            width: calc(100% - 76px)
+        }
+
+        #a2a_copy_link_copied {
+            background-color: #0166ff;
+            color: #fff;
+            display: none;
+            font: inherit;
+            font-size: 16px;
+            margin-top: 1px;
+            padding: 3px 8px
+        }
+
+        @media (forced-colors: active) {
+            .a2a_color_buttons a, .a2a_svg {
+                forced-color-adjust: none
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .a2a_menu a, .a2a_menu a.a2a_i, .a2a_menu a.a2a_i:visited, .a2a_menu a.a2a_more, i.a2a_i {
+                border-color: #2a2a2a !important;
+                color: #fff !important
+            }
+
+            .a2a_menu a.a2a_i:active, .a2a_menu a.a2a_i:focus, .a2a_menu a.a2a_i:hover, .a2a_menu a.a2a_more:active, .a2a_menu a.a2a_more:focus, .a2a_menu a.a2a_more:hover, .a2a_menu_find_container {
+                border-color: #444 !important;
+                background-color: #444 !important
+            }
+
+            .a2a_menu:not(.a2a_thanks) {
+                background-color: #2a2a2a;
+                border-color: #2a2a2a
+            }
+
+            .a2a_menu_find {
+                color: #fff !important
+            }
+
+            .a2a_menu label.a2a_s_find svg {
+                background-color: transparent !important
+            }
+
+            .a2a_menu label.a2a_s_find svg path {
+                fill: #fff !important
+            }
+
+            .a2a_full {
+                box-shadow: #00000066 0 0 20px 10px
+            }
+
+            .a2a_overlay {
+                background-color: #373737eb
+            }
+        }
+
+        @media print {
+            .a2a_floating_style, .a2a_menu, .a2a_overlay {
+                visibility: hidden
+            }
+        }
+
+        @keyframes a2aFadeIn {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .a2a_starting {
+            opacity: 0
+        }
+
+        .a2a_starting.a2a_full, .a2a_starting.a2a_modal {
+            transform: scale(.8)
+        }
+
+        @media (max-width: 639px) {
+            .a2a_full {
+                border-radius: 0;
+                top: 15%;
+                left: 0;
+                margin-left: auto;
+                width: 100%
+            }
+
+            .a2a_modal {
+                left: 0;
+                margin-left: 10px;
+                width: calc(100% - 20px)
+            }
+        }
+
+        @media (min-width: 318px) and (max-width: 437px) {
+            .a2a_full .a2a_full_services .a2a_i {
+                width: calc(50% - 18px)
+            }
+        }
+
+        @media (max-width: 317px) {
+            .a2a_full .a2a_full_services .a2a_i {
+                width: calc(100% - 18px)
+            }
+        }
+
+        @media (max-height: 436px) {
+            .a2a_full {
+                bottom: 40px;
+                height: auto;
+                top: 40px
+            }
+        }
+
+        @media (max-height: 550px) {
+            .a2a_modal {
+                top: 30px
+            }
+        }
+
+        @media (max-height: 360px) {
+            .a2a_modal {
+                top: 20px
+            }
+
+            .a2a_thanks > div:first-child {
+                margin-bottom: 20px
+            }
+        }
+
+        .a2a_menu a {
+            color: #0166FF;
+            text-decoration: none;
+            font: 16px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, "Liberation Sans", sans-serif;
+            line-height: 14px;
+            height: auto;
+            width: auto;
+            outline: 0
+        }
+
+        .a2a_menu a.a2a_i:visited, .a2a_menu a.a2a_more {
+            color: #0166FF
+        }
+
+        .a2a_menu a.a2a_i:active, .a2a_menu a.a2a_i:focus, .a2a_menu a.a2a_i:hover, .a2a_menu a.a2a_more:active, .a2a_menu a.a2a_more:focus, .a2a_menu a.a2a_more:hover {
+            color: #2A2A2A;
+            border-color: #EEE;
+            border-style: solid;
+            background-color: #EEE;
+            text-decoration: none
+        }
+
+        .a2a_menu label.a2a_s_find {
+            background-size: 24px;
+            height: 24px;
+            left: 8px;
+            pointer-events: auto;
+            position: absolute;
+            top: 7px;
+            width: 24px
+        }
+
+        .a2a_menu label.a2a_s_find svg {
+            background-color: #FFF
+        }
+
+        .a2a_menu label.a2a_s_find svg path {
+            fill: #CCC
+        }
+
+        #a2a_menu_container {
+            display: inline-block
+        }
+
+        .a2a_menu_find_container {
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            padding: 2px 24px 2px 0;
+            position: relative;
+            text-align: left
+        }
+
+        .a2a_cols_container .a2a_col1 {
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch
+        }
+
+        #a2a_modal input, #a2a_modal input[type=text], .a2a_menu input, .a2a_menu input[type=text] {
+            display: block;
+            background-image: none;
+            box-shadow: none;
+            line-height: 100%;
+            margin: 0;
+            outline: 0;
+            overflow: hidden;
+            padding: 0;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            -webkit-appearance: none
+        }
+
+        #a2afeed_find_container input, #a2afeed_find_container input[type=text], #a2apage_find_container input, #a2apage_find_container input[type=text] {
+            background-color: transparent;
+            border: 0;
+            box-sizing: content-box;
+            color: #2A2A2A;
+            float: none;
+            font: inherit;
+            font-size: 16px;
+            height: 28px;
+            line-height: 20px;
+            left: 38px;
+            outline: 0;
+            margin: 0;
+            max-width: initial;
+            min-height: initial;
+            padding: 2px 0;
+            position: relative;
+            width: 99%
+        }
+
+        .a2a_clear {
+            clear: both
+        }
+
+        .a2a_svg {
+            background-repeat: no-repeat;
+            display: block;
+            overflow: hidden;
+            height: 32px;
+            line-height: 32px;
+            padding: 0;
+            pointer-events: none;
+            width: 32px
+        }
+
+        .a2a_svg svg {
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            border: none;
+            display: block;
+            left: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            top: 0;
+            width: auto;
+            height: auto
+        }
+
+        a.a2a_i, i.a2a_i {
+            display: block;
+            float: left;
+            border: 1px solid #FFF;
+            line-height: 24px;
+            padding: 6px 8px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 132px
+        }
+
+        a.a2a_i span, a.a2a_more span {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top
+        }
+
+        a.a2a_i .a2a_svg {
+            margin: 0 6px 0 0
+        }
+
+        a.a2a_i .a2a_svg, a.a2a_more .a2a_svg {
+            background-size: 24px;
+            height: 24px;
+            line-height: 24px;
+            width: 24px
+        }
+
+        a.a2a_sss:hover {
+            border-left: 1px solid #CCC
+        }
+
+        a.a2a_more {
+            border-bottom: 1px solid #FFF;
+            border-left: 0;
+            border-right: 0;
+            line-height: 24px;
+            margin: 6px 0 0;
+            padding: 6px;
+            -webkit-touch-callout: none
+        }
+
+        a.a2a_more span {
+            height: 24px;
+            margin: 0 6px 0 0
+        }
+
+        .a2a_kit .a2a_svg {
+            background-repeat: repeat
+        }
+
+        .a2a_default_style a:empty, .a2a_flex_style a:empty, .a2a_floating_style a:empty, .a2a_overlay_style a:empty {
+            display: none
+        }
+
+        .a2a_color_buttons a, .a2a_floating_style a {
+            text-decoration: none
+        }
+
+        .a2a_default_style:not(.a2a_flex_style) a {
+            float: left;
+            line-height: 16px;
+            padding: 0 2px
+        }
+
+        .a2a_default_style a:hover .a2a_svg, .a2a_floating_style a:hover .a2a_svg, .a2a_overlay_style a:hover .a2a_svg svg {
+            opacity: .7
+        }
+
+        .a2a_overlay_style.a2a_default_style a:hover .a2a_svg {
+            opacity: 1
+        }
+
+        .a2a_default_style .a2a_count, .a2a_default_style .a2a_svg, .a2a_floating_style .a2a_svg, .a2a_menu .a2a_svg, .a2a_vertical_style .a2a_count, .a2a_vertical_style .a2a_svg {
+            border-radius: 4px
+        }
+
+        .a2a_default_style .a2a_counter img, .a2a_default_style .a2a_dd, .a2a_default_style .a2a_svg {
+            float: left
+        }
+
+        .a2a_default_style .a2a_img_text {
+            margin-right: 4px
+        }
+
+        .a2a_default_style .a2a_divider {
+            border-left: 1px solid #000;
+            display: inline;
+            float: left;
+            height: 16px;
+            line-height: 16px;
+            margin: 0 5px
+        }
+
+        .a2a_kit a {
+            cursor: pointer;
+            transition: none
+        }
+
+        .a2a_floating_style {
+            background-color: #fff;
+            border-radius: 6px;
+            position: fixed;
+            z-index: 9999995
+        }
+
+        .a2a_overlay_style {
+            z-index: 2147483647
+        }
+
+        .a2a_floating_style, .a2a_overlay_style {
+            animation: a2aFadeIn .2s ease-in;
+            padding: 4px
+        }
+
+        .a2a_vertical_style:not(.a2a_flex_style) a {
+            clear: left;
+            display: block;
+            overflow: hidden;
+            padding: 4px
+        }
+
+        .a2a_floating_style.a2a_default_style {
+            bottom: 0
+        }
+
+        .a2a_floating_style.a2a_default_style a, .a2a_overlay_style.a2a_default_style a {
+            padding: 4px
+        }
+
+        .a2a_count {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            color: #2a2a2a;
+            display: block;
+            float: left;
+            font: 12px Arial, Helvetica, sans-serif;
+            height: 16px;
+            margin-left: 4px;
+            position: relative;
+            text-align: center;
+            width: 50px
+        }
+
+        .a2a_count:after, .a2a_count:before {
+            border: solid transparent;
+            border-width: 4px 4px 4px 0;
+            content: "";
+            height: 0;
+            left: 0;
+            line-height: 0;
+            margin: -4px 0 0 -4px;
+            position: absolute;
+            top: 50%;
+            width: 0
+        }
+
+        .a2a_count:before {
+            border-right-color: #ccc
+        }
+
+        .a2a_count:after {
+            border-right-color: #fff;
+            margin-left: -3px
+        }
+
+        .a2a_count span {
+            animation: a2aFadeIn .14s ease-in
+        }
+
+        .a2a_vertical_style .a2a_counter img {
+            display: block
+        }
+
+        .a2a_vertical_style .a2a_count {
+            float: none;
+            margin-left: 0;
+            margin-top: 6px
+        }
+
+        .a2a_vertical_style .a2a_count:after, .a2a_vertical_style .a2a_count:before {
+            border: solid transparent;
+            border-width: 0 4px 4px 4px;
+            content: "";
+            height: 0;
+            left: 50%;
+            line-height: 0;
+            margin: -4px 0 0 -4px;
+            position: absolute;
+            top: 0;
+            width: 0
+        }
+
+        .a2a_vertical_style .a2a_count:before {
+            border-bottom-color: #ccc
+        }
+
+        .a2a_vertical_style .a2a_count:after {
+            border-bottom-color: #fff;
+            margin-top: -3px
+        }
+
+        .a2a_color_buttons .a2a_count, .a2a_color_buttons .a2a_count:after, .a2a_color_buttons .a2a_count:before, .a2a_color_buttons.a2a_vertical_style .a2a_count:after, .a2a_color_buttons.a2a_vertical_style .a2a_count:before {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            float: none;
+            width: auto
+        }
+
+        .a2a_color_buttons.a2a_vertical_style .a2a_count {
+            margin-top: 0
+        }
+
+        .a2a_flex_style {
+            display: flex;
+            align-items: flex-start;
+            gap: 0
+        }
+
+        .a2a_default_style.a2a_flex_style {
+            left: 0;
+            right: 0;
+            width: 100%
+        }
+
+        .a2a_vertical_style.a2a_flex_style {
+            flex-direction: column;
+            top: 0;
+            bottom: 0
+        }
+
+        .a2a_flex_style a {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            padding: 4px
+        }
+
+        .a2a_flex_style.a2a_vertical_style a {
+            flex-direction: column
+        }
+
+        .a2a_floating_style.a2a_color_buttons, .a2a_floating_style.a2a_flex_style {
+            border-radius: 0;
+            padding: 0
+        }
+
+        .a2a_floating_style.a2a_default_style.a2a_flex_style {
+            bottom: 0
+        }
+
+        .a2a_kit.a2a_flex_style .a2a_counter img, .a2a_kit.a2a_flex_style .a2a_dd, .a2a_kit.a2a_flex_style .a2a_svg {
+            float: none
+        }
+
+        .a2a_nowrap {
+            white-space: nowrap
+        }
+
+        .a2a_note {
+            margin: 0 auto;
+            padding: 9px;
+            font-size: 12px;
+            text-align: center
+        }
+
+        .a2a_note .a2a_note_note {
+            margin: 0;
+            color: #2A2A2A
+        }
+
+        .a2a_wide a {
+            display: block;
+            margin-top: 3px;
+            border-top: 1px solid #EEE;
+            text-align: center
+        }
+
+        .a2a_label {
+            position: absolute !important;
+            clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+            -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+            overflow: hidden;
+            height: 1px;
+            width: 1px
+        }
+
+        .a2a_kit, .a2a_menu, .a2a_modal, .a2a_overlay {
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            outline: 0
+        }
+
+        .a2a_dd {
+            -webkit-user-drag: none
+        }
+
+        .a2a_dd img {
+            border: 0
+        }
+
+        .a2a_button_facebook_like iframe {
+            max-width: none
+        }</style>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body class="">
+//= details/header.html
+<main>
+    <section class="mini-hero mini-hero--article">
+        <div class="container">
+            <div class="mini-hero__cont">
+                <div class="mini-hero__bg">
+                    <div class="img">
+                        <img class="lazyload" data-src="./img/art1.png" alt="">
+                    </div>
+                </div>
+                <div class="mini-hero__text">
+                    <div class="breadcrumbs-block">
+                        <ul class="breadcrumbs">
+                            <li><a href="">Головна </a></li>
+                            <li><span>Блог</span></li>
+                        </ul>
+                        <div class="hero-title">
+                            <h1 class="title">Розлучення в Україні у 2025 році</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-section">
+        <div class="container">
+            <div class="article-section__cont">
+                <div class="article-section__left">
+                    <div class="article-section__textual">
+                        <div class="text-block">
+                            <h2>Зміни в законодавстві України щодо розлучення у 2025 році</h2>
+                            <p>На початок 2025 року в Україні діють ті самі вимоги та закони, які були прийняті у 2024
+                                році та раніше. Суттєвих змін не сталось, розлучення в Україні відбувається згідно
+                                Сімейного Кодексу та Законів України, про які можна ознайомитись на офіційних джерелах,
+                                та все ж таки у 2025 році існують деякі особливості розірвання шлюбу, про які необхідно
+                                знати тим, хто бажає розлучитись.</p>
+                            <p>У 2025 році судовий збір за розлучення - 1 211.20 грн. <br> Розмір встановлено Законом
+                                України про судовий збір: <a
+                                        href="">https://zakon.rada.gov.ua/laws/show/3674-17#Text</a></p>
+                            <p>У 2025 році законодавець планує спростити процедуру розлучення, якщо у шлюбі є дитина до
+                                1 року або дружина вагітна</p>
+                            <p>У 2025 році справи про розлучення замість судів на окупованих територіях розглядають
+                                інші суди на території України. Підсудність справ про розлучення можна переглянути на
+                                офіційному сайті судової влади:<a href="">https://supreme.court.gov.ua/supreme/gromadyanam/terutor_pidsudnist/</a>
+                            </p>
+                            <h2>Варіанти розлучення в 2025 році в Україні</h2>
+                            <blockquote>Якщо у вашому шлюбі немає дітей, ви обоє згодні на розлучення і у чоловіка є
+                                документи про військовий облік, оптимальним варіантом в 2025 році буде розлучення через
+                                РАЦС. Просто запишіться на прийом та подайте спільну заяву на розлучення.
+                            </blockquote>
+
+                            <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/Vyc1qYvpRsk?si=gVpiFADYsoeU1aLq"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <p>Якщо ж у шлюбі є діти, або хтось перебуває за кордоном, або немає можливості з'явитися до
+                                РАЦСу у 2025 році, в такому випадку найзручнішим варіантом буде розлучення через суд.
+                                Для такого розлучення найзручніше скористатись нашим сервісом «Розлучення Онлайн»,
+                                отримати повний пакет документів на розлучення вже за 10 хвилин та просто надіслати їх
+                                до суду Укрпоштою, не ускладнюючи собі життя системою "Електронний суд".</p>
+                            <h3>Розлучення онлайн у 2025 році в Україні</h3>
+                            <p>Онлайн-розлучення в Україні у 2025 році доступне для тих пар, які бажають розірвати шлюб
+                                за спільною згодою або коли одна зі сторін не з'являється в суд або не погоджується на
+                                розлучення. У таких випадках онлайн-процедура розлучення може бути швидшою та менш
+                                складною альтернативою традиційним методам.</p>
+                            <p>Проте слід врахувати, що у 2025 продовжується блокування Міністерством юстиції
+                                можливість подання онлайн-заяви на розлучення під час дії воєнного стану. Інформацію про
+                                законні підстави та порядок розлучення в Україні у 2025 році можна знайти на офіційних
+                                ресурсах.</p>
+                            <p>Слід враховувати, що не всі випадки розлучення можуть бути оформлені через
+                                онлайн-процедуру. Наприклад, у ситуаціях, коли між сторонами існують конфлікти і вони не
+                                можуть досягти згоди щодо розлучення або розподілу майна, може знадобитися розгляд
+                                справи в суді. Також, якщо одна зі сторін не погоджується на розлучення, процедура
+                                розлучення онлайн в 2025 році буде недоступною. Крім того, у випадку наявності
+                                неповнолітніх дітей можуть виникнути додаткові вимоги та обмеження, які потрібно
+                                враховувати.</p>
+                            <img src="./img/art4.jpg" alt="">
+                            <blockquote>Можливість онлайн розлучення в Україні у 2025 році через органи РАЦС під час
+                                війни не діє.
+                            </blockquote>
+                            <h3>Які документи потрібні для розлучення у 2025 році?</h3>
+                            <p>Для розлучення в Україні у 2025 році необхідно підготувати певний набір документів. Цей
+                                набір може варіюватися в залежності від конкретної процедури розлучення (через
+                                адміністративні органи або суд) та обставин справи.</p>
+                            <p>Зазвичай до списку документів для розлучення в 2025 році входять:</p>
+                            <ul>
+                                <li>заява про розлучення</li>
+                                <li>свідоцтво про шлюб</li>
+                                <li>документи на дітей</li>
+                                <li>угода про поділ майна та попередня угода про утримання дітей (якщо така є).</li>
+                            </ul>
+                            <p>Для здійснення онлайн-розлучення <strong>через суд в 2025 році в Україні</strong> слід
+                                виконати наступні
+                                кроки:</p>
+
+
+                            <ol>
+                                <li>Підготуйте документи та створіть комплект, який включатиме заяву про розлучення, акт
+                                    про
+                                    домовленість щодо дітей (якщо є), а також копії паспортів та інших необхідних
+                                    документів.
+                                </li>
+                                <li>Якщо ви не можете самостійно заповнити заяву на розлучення через суд в 2025 році,
+                                    будь-ласка
+                                    скористайтесь нашим сервісом та отримайте всі необхідні документи на розлучення
+                                    через суд у
+                                    2025 році вже за кілька хвилин після оплати.
+                                </li>
+                                <li>Надішліть підписані та заповнені документи на розлучення через суд у 2025 році
+                                    УкрПоштою у
+                                    вибраний суд або власноруч занесіть їх.
+                                </li>
+                                <li>Після проведення засідання суд прийме рішення щодо вашого розлучення, і ви отримаєте
+                                    копію
+                                    рішення суду.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="article-section__share">
+                        <p>Поділитися:</p>
+                        <div class="addtoany_shortcode">
+
+                            <div class="a2a_kit a2a_kit_size_32 addtoany_list"
+                                 data-a2a-url=""
+                                 data-a2a-title="סופגניות: הדרך הטעימה להזמנת מארז משלוח לחנוכה"
+                                 style="line-height: 32px;">
+                                <a class="a2a_button_facebook" href="/#facebook"
+                                   title="Facebook" rel="nofollow noopener"
+                                   target="_blank"><span
+                                        class="a2a_svg a2a_s__default a2a_s_facebook"
+                                        style="background-color: transparent;"><svg focusable="false" aria-hidden="true"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    viewBox="0 0 32 32"><path
+                                        fill="#000000"
+                                        d="M28 16c0-6.627-5.373-12-12-12S4 9.373 4 16c0 5.628 3.875 10.35 9.101 11.647v-7.98h-2.474V16H13.1v-1.58c0-4.085 1.849-5.978 5.859-5.978.76 0 2.072.15 2.608.298v3.325c-.283-.03-.775-.045-1.386-.045-1.967 0-2.728.745-2.728 2.683V16h3.92l-.673 3.667h-3.247v8.245C23.395 27.195 28 22.135 28 16"></path></svg></span><span
+                                        class="a2a_label">Facebook</span></a>
+                                <a class="a2a_button_twitter"
+                                   href="/#twitter" title="Twitter"
+                                   rel="nofollow noopener"
+                                   target="_blank"><span
+                                        class="a2a_svg a2a_s__default a2a_s_twitter"
+                                        style="background-color: transparent;"><svg focusable="false" aria-hidden="true"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    viewBox="0 0 32 32"><path
+                                        fill="#000000"
+                                        d="M28 8.557a10 10 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.7 9.7 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.94 4.94 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a5 5 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174q-.476-.001-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.9 9.9 0 0 1-6.114 2.107q-.597 0-1.175-.068a13.95 13.95 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013q0-.32-.015-.637c.96-.695 1.795-1.56 2.455-2.55z"></path></svg></span><span
+                                        class="a2a_label">Twitter</span></a>
+                                <a class="a2a_button_email" href="/#email" title="Email" rel="nofollow noopener"
+                                   target="_blank"><span class="a2a_svg a2a_s__default a2a_s_email"
+                                                         style="background-color: transparent;"><svg focusable="false"
+                                                                                                     aria-hidden="true"
+                                                                                                     xmlns="http://www.w3.org/2000/svg"
+                                                                                                     viewBox="0 0 32 32"><path
+                                        fill="#000000"
+                                        d="M27 21.775v-9.9s-10.01 6.985-10.982 7.348C15.058 18.878 5 11.875 5 11.875v9.9c0 1.375.293 1.65 1.65 1.65h18.7c1.393 0 1.65-.242 1.65-1.65m-.017-11.841c0-1.002-.291-1.359-1.633-1.359H6.65c-1.38 0-1.65.429-1.65 1.43l.016.154s9.939 6.842 11 7.216C17.14 16.941 27 10.005 27 10.005z"></path></svg></span><span
+                                        class="a2a_label">Email</span></a>
+                                <a class="a2a_button_whatsapp"
+                                   href="/#whatsapp" title="WhatsApp"
+                                   rel="nofollow noopener"
+                                   target="_blank"><span
+                                        class="a2a_svg a2a_s__default a2a_s_whatsapp"
+                                        style="background-color: transparent;"><svg focusable="false" aria-hidden="true"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    viewBox="0 0 32 32"><path
+                                        fill="#000000" fill-rule="evenodd"
+                                        d="M16.21 4.41C9.973 4.41 4.917 9.465 4.917 15.7c0 2.134.592 4.13 1.62 5.832L4.5 27.59l6.25-2.002a11.24 11.24 0 0 0 5.46 1.404c6.234 0 11.29-5.055 11.29-11.29 0-6.237-5.056-11.292-11.29-11.292m0 20.69c-1.91 0-3.69-.57-5.173-1.553l-3.61 1.156 1.173-3.49a9.35 9.35 0 0 1-1.79-5.512c0-5.18 4.217-9.4 9.4-9.4s9.397 4.22 9.397 9.4c0 5.188-4.214 9.4-9.398 9.4zm5.293-6.832c-.284-.155-1.673-.906-1.934-1.012-.265-.106-.455-.16-.658.12s-.78.91-.954 1.096c-.176.186-.345.203-.628.048-.282-.154-1.2-.494-2.264-1.517-.83-.795-1.373-1.76-1.53-2.055s0-.445.15-.584c.134-.124.3-.326.45-.488.15-.163.203-.28.306-.47.104-.19.06-.36-.005-.506-.066-.147-.59-1.587-.81-2.173-.218-.586-.46-.498-.63-.505-.168-.007-.358-.038-.55-.045-.19-.007-.51.054-.78.332-.277.274-1.05.943-1.1 2.362-.055 1.418.926 2.826 1.064 3.023.137.2 1.874 3.272 4.76 4.537 2.888 1.264 2.9.878 3.43.85.53-.027 1.734-.633 2-1.297s.287-1.24.22-1.363c-.07-.123-.26-.203-.54-.357z"
+                                        clip-rule="evenodd"></path></svg></span><span
+                                        class="a2a_label">WhatsApp</span></a>
+                                <a
+                                        class="a2a_button_telegram" href="/#telegram" title="Telegram"
+                                        rel="nofollow noopener" target="_blank"><span
+                                        class="a2a_svg a2a_s__default a2a_s_telegram"
+                                        style="background-color: transparent;"><svg focusable="false" aria-hidden="true"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    viewBox="0 0 32 32"><path
+                                        fill="#000000"
+                                        d="M25.515 6.896 6.027 14.41c-1.33.534-1.322 1.276-.243 1.606l5 1.56 1.72 5.66c.226.625.115.873.77.873.506 0 .73-.235 1.012-.51l2.43-2.363 5.056 3.734c.93.514 1.602.25 1.834-.863l3.32-15.638c.338-1.363-.52-1.98-1.41-1.577z"></path></svg></span><span
+                                        class="a2a_label">Telegram</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="article-section__comments">
+                        <img src="./img/artcomm.jpg" alt="">
+                    </div>
+                </div>
+                <div class="article-section__right">
+                    <div class="blog-section__recommends blog-section__block">
+                        <span>Рекомендована послуга</span>
+                        <div class="blog-recommends">
+                            <div class="img">
+                                <img src="./img/art2.png" alt="">
+                            </div>
+                            <span class="ln">для тих, хто в Україні</span>
+                            <span class="ln">для тих, хто за кордоном</span>
+                            <span>Розлучення під ключ</span>
+                            <p>Всі юридичні нюанси беремо на себе, а ви отримуєте готовий результат</p>
+                            <a href="" class="btn">
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Докладніше</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog-section__test blog-section__block">
+                        <div class="test-mini">
+                            <span>Не знаєте, як подати на розлучення онлайн?</span>
+                            <div class="img">
+                                <img src="./img/art3.png" alt="">
+                            </div>
+                            <p>Не знаєте, як подати на розлучення онлайн?</p>
+                            <a href="" class="btn btn-mod" data-mod="test">
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Пройти тест</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog-section__popular blog-section__block">
+                        <span>Не пропустіть також:</span>
+                        <div class="side-blog">
+                            <a href="" class="blog-item">
+                                <div class="img">
+                                    <img src="./img/blog2.jpg" alt="">
+                                </div>
+                                <div class="txt">
+                                    <p>Розлучення без присутності обох з подружжя</p>
+                                    <span>01 квітня</span>
+                                </div>
+                            </a>
+                            <a href="" class="blog-item">
+                                <div class="img">
+                                    <img src="./img/blog2.jpg" alt="">
+                                </div>
+                                <div class="txt">
+                                    <p>Розлучення без присутності обох з подружжя</p>
+                                    <span>01 квітня</span>
+                                </div>
+                            </a>
+                            <a href="" class="blog-item">
+                                <div class="img">
+                                    <img src="./img/blog2.jpg" alt="">
+                                </div>
+                                <div class="txt">
+                                    <p>Розлучення без присутності обох з подружжя</p>
+                                    <span>01 квітня</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="consult">
+        <div class="container">
+            <div class="consult-cont">
+                <div class="consult-bg">
+                    <img class="lazyload" data-src="./img/cons1.png" alt="">
+                </div>
+                <div class="faq-right">
+                    <span>консультація безкоштовна</span>
+                    <div class="faq-contacts">
+                        <span class="subttl">Залишились питання?</span>
+                        <p>Написати для початку розлучення чи для консультації з адвокатом</p>
+                        <div class="socs">
+                            <a href="" style="--ic: url('../img/icvb.svg')"></a>
+                            <a href="" style="--ic: url('../img/icwa.svg')"></a>
+                            <a href="" style="--ic: url('../img/ictg.svg')"></a>
+                        </div>
+                        <p>або зателефонуй нам:</p>
+                        <a href="" class="header-call">
+                            <div class="ic">
+                                <img src="./img/phn1.svg" alt="">
+                            </div>
+                            <div class="txt">
+                                <span>Чекаємо твого дзвінка</span>
+                                <p>+38 073 900 09 12</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+//= details/footer.html
+//= details/scripts.html
+</body>
+</html>
