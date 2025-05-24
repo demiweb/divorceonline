@@ -1551,6 +1551,10 @@ body {
   justify-content: center;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  &.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 
   &::after {
     background: $main-color;
