@@ -45,6 +45,104 @@ $(window).scroll(function (e) {
 });
 
 
+//anim
+
+//add counting number to show delay speed
+var counterContainer = [...document.querySelectorAll('.counting-delay')];
+
+function addCoutingDelay() {
+    if (counterContainer.length) {
+        counterContainer.forEach((cont) => {
+            var anims = [...cont.querySelectorAll('.anim')];
+            anims.forEach((btn, k) => {
+                btn.dataset.animDelay = k * 40;
+            })
+        })
+    }
+}
+
+addCoutingDelay();
+
+var animStage = [...document.querySelectorAll('.anim-stage')];
+
+function scrollAnimationsStage() {
+    if (animStage.length) {
+        var animItems = [...document.querySelectorAll(':scope > *')];
+
+        var observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // console.log(entry.target);
+                var eles = [...entry.target.querySelectorAll(":scope > *")];
+                var len = eles.length;
+
+                // console.log(eles);
+                if (entry.isIntersecting) {
+                    for (var i = 0; i < len; i++) {
+                        // console.log(eles[1]);
+                        eles[i].style.animationDelay = (entry.target.dataset.animDelay * i) + 'ms';
+                        eles[i].style.animationDuration = entry.target.dataset.animDuration + 'ms';
+                        eles[i].style.animationName = entry.target.dataset.anim;
+                        eles[i].classList.add('done');
+                        eles[i].style.setProperty('--del', (entry.target.dataset.animDelay * i) + 'ms');
+                    }
+                    observer.unobserve(entry.target);
+                }
+
+            })
+        }, {threshold: .5})
+
+        animStage.forEach((animate, k) => {
+            observer.observe(animate);
+        })
+
+    }
+}
+
+scrollAnimationsStage();
+
+// scroll animations
+var anim = document.querySelectorAll('.anim')
+
+function scrollAnimations() {
+    if (anim.length) {
+        var observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                var el = entry.target
+                if (entry.isIntersecting) {
+                    if (el.classList.contains('anim-js')) {
+
+                    } else {
+                        el.style.animationDelay = el.dataset.animDelay + 'ms';
+                        el.style.animationDuration = el.dataset.animDuration + 'ms';
+                        el.style.animationName = el.dataset.anim;
+                    }
+
+
+                    el.classList.add('done');
+                    observer.unobserve(entry.target);
+                }
+
+            })
+        }, {threshold: .5});
+        if (window.innerWidth > 991) {
+            anim.forEach(animate => {
+                observer.observe(animate)
+            })
+        } else {
+
+            anim.forEach(animate => {
+
+                observer.observe(animate)
+
+
+            })
+        }
+    }
+}
+
+scrollAnimations();
+
+
 $('.single-faq__head').click(function () {
     // $(this).closest('.single-faq').toggleClass(' open ');
     //$(this).siblings().removeClass(' active ');
@@ -375,14 +473,18 @@ function controlVideoBlock() {
         videoBlock.forEach((block) => {
             let vid = block.querySelector('video');
             let btn = block.querySelector('.play');
+            let id = btn.dataset.video;
+            let modalVideo = $('.modal-window--video')[0];
+
             btn.addEventListener('click', () => {
-                if (block.classList.contains('played')) {
-                    block.classList.remove('played');
-                    vid.pause();
-                } else {
-                    block.classList.add('played');
-                    vid.play();
-                }
+
+                let videoBl = document.createElement('video');
+                videoBl.src = id;
+                videoBl.playsinline = true;
+                videoBl.controls = true;
+                modalVideo.querySelector('.video-container').append(videoBl);
+                videoBl.play();
+
             })
         })
     }
@@ -427,4 +529,5 @@ function controlBlogCats() {
         })
     }
 }
+
 controlBlogCats();
