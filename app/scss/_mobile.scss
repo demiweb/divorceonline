@@ -1294,4 +1294,65 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
+  .test-section__questions {
+    height: auto;
+  }
+  .modal-textual__test {
+    height: auto;
+  }
+  .test-section__block[data-quest^=final] span {
+    font-size: 0.8rem;
+  }
+  .test-section {
+    position: static;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    height: auto;
+  }
+  .modal-textual__test {
+    min-height: 0;
+    padding: 0;
+    overflow-y: auto;
+  }
+  .test-section__block .bck {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 1rem;
+  }
+  .test-section__block {
+    height: auto;
+    min-height: 14rem;
+    padding: 2.5rem 1rem;
+    .btns-q {
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  .test-section__block span {
+    font-size: 1rem;
+  }
+  .modal-window {
+    .cls {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+    .modal-textual {
+      gap: 0.5rem;
+    }
+    .modal-container {
+      height: 100%;
+      padding: 2rem 1rem;
+      .subttl {
+        font-size: 1.2rem;
+      }
+      .modal-textual {
+        height: 100%;
+
+      }
+    }
+  }
+
 }

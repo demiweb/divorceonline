@@ -379,7 +379,7 @@ function controlModal() {
                 e.preventDefault();
                 e.stopPropagation();
 
-                alert('tut bude popup');
+                // alert('tut bude popup');
                 modals.forEach((mod) => {
 
                     if (mod.dataset.modal === data) {
@@ -484,6 +484,8 @@ function controlVideoBlock() {
                 videoBl.controls = true;
                 modalVideo.querySelector('.video-container').append(videoBl);
                 videoBl.play();
+                modalVideo.classList.add('visible');
+                document.querySelector('body').classList.add('no-scroll');
 
             })
         })
@@ -531,3 +533,43 @@ function controlBlogCats() {
 }
 
 controlBlogCats();
+
+//control popup test
+
+let testSection = [...document.querySelectorAll('.test-section')];
+
+function controlTest() {
+    if (testSection.length) {
+        testSection.forEach((test) => {
+            let questions = [...test.querySelectorAll('.test-section__block')];
+            questions.forEach((block) => {
+                let dat = block.dataset.quest;
+                let btnNext = [...block.querySelectorAll('.nxt')];
+                if (btnNext.length) {
+                    btnNext.forEach((nxt) => {
+                        nxt.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            let nextSect = nxt.dataset.next;
+                            document.querySelector('.test-section__block.vis').classList.remove('vis');
+
+                            document.querySelector(`.test-section__block[data-quest='${nextSect}']`).classList.add('vis');
+                            document.querySelector(`.test-section__block[data-quest='${nextSect}'] .bck`).dataset.back = dat;
+                        })
+                    })
+                }
+            })
+        });
+        let bckBtns = [...document.querySelectorAll('.test-section__block .bck')];
+        bckBtns.forEach((bkc) => {
+            bkc.addEventListener('click', () => {
+                let dataBack = bkc.dataset.back;
+                document.querySelector('.test-section__block.vis').classList.remove('vis');
+                document.querySelector(`.test-section__block[data-quest='${dataBack}']`).classList.add('vis');
+            })
+        })
+
+    }
+}
+
+controlTest();

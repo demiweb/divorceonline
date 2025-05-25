@@ -284,7 +284,8 @@
                     <li><a href="">Політика конфіденційності</a></li>
                     <li><a href="">Публічний договір</a></li>
                 </ul>
-                <a href="https://demiweb-studio.com.ua/" class="demi" target="_blank" style="--bg: url('../img/demi.svg')"></a>
+                <a href="https://demiweb-studio.com.ua/" class="demi" target="_blank"
+                   style="--bg: url('../img/demi.svg')"></a>
             </div>
         </div>
 
@@ -292,7 +293,146 @@
 </footer>
 
 <div class="modal-window modal-window--video">
-    <div class="video-container"></div>
+    <div class="backplate"></div>
+    <div class="modal-container">
+        <div class="cls">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="video-container"></div>
+    </div>
+
+</div>
+
+<div class="modal-window modal-window--test" data-modal="test">
+    <div class="backplate"></div>
+    <div class="modal-container">
+        <div class="cls">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="modal-textual">
+            <div class="modal-textual__top">
+                <span class="subttl">Розлучення можливе за будь-яких обставин</span>
+                <p>Відповідай на 4 питання та отримай персональний план розлучення, який підходить саме тобі</p>
+            </div>
+            <div class="modal-textual__test">
+                <div class="test-section">
+                    <div class="test-section__questions">
+                        <div class="test-section__block vis" data-quest="0">
+                            <span>Другий з подружжя згоден на розлучення?</span>
+                            <div class="btns-q">
+                                <div class="btn-white nxt" data-next="2">Так</div>
+                                <div class="btn-white nxt" data-next="1">Ні</div>
+                            </div>
+
+                        </div>
+                        <div class="test-section__block" data-quest="1">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Ви перебуваєте в Україні чи за кордоном?</span>
+                            <div class="btns-q">
+                                <div class="btn-white nxt" data-next="3">В Україні</div>
+                                <div class="btn-white nxt" data-next="final1">За кордоном</div>
+                            </div>
+                        </div>
+                        <div class="test-section__block" data-quest="2">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>У шлюбі є діти до 18 років?</span>
+                            <div class="btns-q">
+                                <div class="btn-white nxt" data-next="1">Так</div>
+                                <div class="btn-white nxt" data-next="final2">Ні</div>
+                            </div>
+                        </div>
+
+                        <div class="test-section__block" data-quest="3">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>У випадку, якщо другий не згоден на розлучення або у шлюбі є діти, розлучення можливе тільки через суд. <br>
+Ваш шлюб було укладено в Україні?</span>
+                            <div class="btns-q">
+                                <div class="btn-white nxt" data-next="4">Так</div>
+                                <div class="btn-white nxt" data-next="final3">Ні</div>
+                            </div>
+                        </div>
+
+                        <div class="test-section__block" data-quest="4">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Вам відоме місце реєстрації (прописка) другого з подружжя?</span>
+                            <div class="btns-q">
+                                <div class="btn-white nxt" data-next="final4">Так</div>
+                                <div class="btn-white nxt" data-next="final5">Ні</div>
+                            </div>
+                        </div>
+
+                        <div class="test-section__block" data-quest="final1">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Чудово, оскільки ви перебуваєте за кордоном, ми рекомендуємо розлучення Під ключ</span>
+                            <a href="" class="btn" >
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Розлучення під ключ</div>
+                            </a>
+
+                        </div>
+
+                        <div class="test-section__block" data-quest="final2">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Якщо у шлюбі немає дітей і обидві згодні на розлучення, можна розлучитись через РАЦС.
+Ви вдома можете звернутись до РАЦС (за місцем реєстрації [прописки] одного з подружжя) зі спільною заявою. Через 1 місяць вас запросять для підтвердження розлучення. Рекомендуємо попередньо зателефонувати до РАЦС для запису.</span>
+                            <div class="txt">
+                                <p><strong>Що потрібно:</strong></p>
+                                <ul>
+                                    <li>Свідоцтво про шлюб</li>
+                                    <li>Ваші паспорти</li>
+                                    <li>Документ про військовий облік чоловіка</li>
+                                </ul>
+                            </div>
+                            <div class="btns-q">
+                                <a href="" class="btn" >
+                                    <div class="btn-glow"></div>
+                                    <div class="btn-wrap">Розлучення через суд</div>
+                                </a>
+                                <a href="" class="btn" download>
+                                    <div class="btn-glow"></div>
+                                    <div class="btn-wrap">Завантажити інструкцію</div>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="test-section__block" data-quest="final3">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Чудово, якщо ваш шлюб укладено за кордоном, ми рекомендуємо розлучення Під ключ</span>
+                            <a href="" class="btn" >
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Розлучення під ключ</div>
+                            </a>
+                        </div>
+
+                        <div class="test-section__block" data-quest="final4">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Чудово, ви можете отримати розлучення через суд</span>
+                            <a href="" class="btn" >
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Підготовка документів</div>
+                            </a>
+                        </div>
+
+                        <div class="test-section__block" data-quest="final5">
+                            <div class="btn-white bck" data-back="">Назад</div>
+                            <span>Чудово, якщо вам не відомо місце реєстрації (прописка) другого з подружжя, ми рекомендуємо розлучення Під ключ</span>
+                            <a href="" class="btn" >
+                                <div class="btn-glow"></div>
+                                <div class="btn-wrap">Розлучення під ключ</div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"

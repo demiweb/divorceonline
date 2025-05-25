@@ -1551,6 +1551,7 @@ body {
   justify-content: center;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+
   &.swiper-button-disabled {
     opacity: 0.3;
     pointer-events: none;
@@ -3869,6 +3870,258 @@ ul.pagination {
             font-weight: 600;
           }
         }
+      }
+    }
+  }
+}
+
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .backplate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: $light;
+    opacity: 0.8;
+    backdrop-filter: blur(0.2rem);
+    filter: blur(0.2rem);
+  }
+
+  .modal-container {
+    border: 1px solid $main-color;
+    border-radius: 1rem;
+    background: #fff;
+    padding: 3rem;
+    width: 100%;
+    max-width: 50rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .video-container {
+    width: 100%;
+    height: 0;
+    padding-top: 60%;
+    position: relative;
+    border: 1px solid $main-color;
+    @include overFlow;
+    border-radius: 1rem;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cls {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid $main-color;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    span {
+      width: 70%;
+      height: 1px;
+      background: $main-color;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+
+      &:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      span {
+        transform: translate(-50%, -50%) rotate(-45deg);
+
+        &:nth-child(2) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+.modal-textual {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+
+  &__top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+
+    p {
+      @include text(0.8rem, $main-color, 1.3, 400);
+
+    }
+  }
+
+  &__test {
+    width: 100%;
+    min-height: 27rem;
+    padding: 1rem;
+    border: 1px solid $main-color;
+    border-radius: 1rem;
+    background: $light;
+    position: relative;
+  }
+}
+
+.test-section {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  &__questions {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__block {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-direction: column;
+    display: none;
+    padding: 2rem;
+    &[data-quest^='final'] {
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .bck {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      flex-direction: row-reverse;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    span {
+      @include text(1.4rem, $main-color, 1.3, 600);
+      text-align: center;
+    }
+
+    .btns-q {
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    &.vis {
+      display: flex;
+    }
+
+    .btn-white {
+      background: #fff;
+      min-width: 7rem;
+
+      &:hover {
+        background: $main-color;
+      }
+    }
+  }
+  .txt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    ul {
+      width: 100%;
+      max-width: 27.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.5rem;
+
+      li {
+        width: 100%;
+        display: inline-block;
+        padding-left: 1.25rem;
+        position: relative;
+        @include text(0.8rem, $main-color, 1.3, 400);
+
+        strong {
+          font-weight: 600;
+        }
+
+        &::before {
+          width: 0.8rem;
+          height: 0.75rem;
+          display: inline-block;
+          content: '';
+          background: $green;
+          mask-image: url("../img/check-msk.png");
+          mask-size: 100% 100%;
+          mask-repeat: no-repeat;
+          mask-position: center center;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+
+    p {
+      @include text(0.8rem, $main-color, 1.3, 400);
+
+      strong {
+        font-weight: 600;
       }
     }
   }
